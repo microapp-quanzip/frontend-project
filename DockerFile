@@ -1,0 +1,13 @@
+# get base node image
+from node:alpine as builder
+# set working dir for container
+workdir /frontend
+# copy json file first
+copy ./package.json /frontend
+
+# install npm dependencies
+run npm install
+# copy other project file to working dir of container (/frontend we set above)
+copy . . 
+# run react app
+cmd ['npm', 'run', 'start']
