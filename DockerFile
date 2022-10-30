@@ -7,7 +7,9 @@ copy ./package.json /frontend
 
 # install npm dependencies
 run npm install
+
 # copy other project file to working dir of container (/frontend we set above)
 copy . . 
+
 # run react app
 cmd ['npm', 'run', 'start']
